@@ -396,21 +396,42 @@ public static void main(String[] args) {
 }
 }*/
 //******************************************************************************************************************************************
-import java.util.*;
+/*import java.util.*;
 public class first {
 public static void main(String[] args) {
     Scanner value = new Scanner(System.in);
-    String a ;
-    a = value.nextLine();
+    String a = value.nextLine();
+    String result = ""; 
     for (int i = 0; i < a.length() ; i++) {
         if (a.charAt(i)=='e') {
-            System.out.println("yes");
+            result +='i';
         }
         else{
-            System.out.println(a);
+            result+=a.charAt(i);
         }
     }
-    System.out.println();
+    System.out.println(result);
     value.close();
 }
+}*/
+//******************************************************************************************************************************************
+/*import java.util.*;
+public class first {
+public static void main(String[] args) {
+    Scanner value = new Scanner(System.in);
+    System.out.print("Enter your email adress : ");
+    String a = value.nextLine();
+    String result = ""; 
+    for (int i = 0; i < a.length() ; i++) {
+        if (a.charAt(i)=='@') {
+            break;
+        }
+        else{
+            result+=a.charAt(i);
+        }
+    }
+    System.out.print("Username : "+result.toUpperCase());
+    value.close();
 }
+}*/
+
