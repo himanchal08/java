@@ -306,21 +306,24 @@ public static void main(String[] args) {
 public class first{
 public static void main(String[] args) {
     Scanner value = new Scanner(System.in);
-    System.out.println("Enter the size of rows : ");
+    System.out.print("Enter the size of rows : ");
     int x = value.nextInt();
-    System.out.println("Enter the size of columns : ");
+    System.out.print("Enter the size of columns : ");
     int y = value.nextInt();
     int [] [] arr = new int[x][y];
+    System.out.println("Enter the values of array : ");
     for (int i = 0; i < x; i++) {
         for (int j = 0; j < y; j++) {
             arr[i][j] = value.nextInt();
         }
     }
+    System.out.println("Values of array : ");
     for (int i = 0; i < x; i++) {
         for (int j = 0; j < y; j++) {
             System.out.println("["+ i +"] ["+ j +"] = " + arr[i][j]);
         }
     }
+    value.close();
 }
 }*/
 //**************************************************************** 2d array x found *****************************************************************
@@ -434,4 +437,121 @@ public static void main(String[] args) {
     value.close();
 }
 }*/
+//**************************************************************** switch case ****************************************************************
+/*import java.util.*;
+public class first{
+public static void main(String[] args) {
+    Scanner value = new Scanner(System.in);
+    System.out.print("Enter the size of rows : ");
+    int rows = value.nextInt();
+    System.out.print("Enter the size of columns : ");
+    int columns = value.nextInt();
+    int [] [] matrix1 = new int[rows][columns];
+    int [] [] matrix2 = new int[rows][columns];
+    int [] [] resultmatrix = new int[rows][columns];
+    System.out.print("Enter the values of First matrix : ");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < columns; j++) {
+            matrix1[i][j] = value.nextInt();
+        }
+    }
+    System.out.print("Enter the values of Second matrix : ");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < columns; j++) {
+            matrix2[i][j] = value.nextInt();
+        }
+    }
+    System.out.println("Choose an operation:");
+        System.out.println("1. Addition");
+        System.out.println("2. Subtraction");
+        System.out.println("3. Multiplication");
+    int choice = value.nextInt();
+    switch (choice) {
+        case 1 :
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                resultmatrix[i][j] = matrix1[i][j] + matrix2[i][j];
+            }
+        }
+            break;
+        case 2 : 
+    for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                resultmatrix[i][j] = matrix1[i][j] - matrix2[i][j];
+            }
+        }
+        break;
+        case 3 : 
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                resultmatrix[i][j] = 0;
+                for (int k = 0; k < columns; k++) {
+                    resultmatrix[i][j] += matrix1[i][k] * matrix2[k][j];
+                }
+            }
+        }
+        break ; 
+        default:System.out.println("Invalid choice");
+            break;
+    }
+    System.out.println("Resultant matrix is this : ");
+    for (int i = 0; i < rows ; i++) {
+        for (int j = 0; j <columns; j++) {
+            System.out.print("["+resultmatrix[i][j] + "] ");
+        }
+        System.out.println();
+    }
+    value.close();
+}
+}*/
+//****************************************** insertion and deletion of an element in an array  ***************************************************
+import java.util.*;
 
+public class first {
+    public static void main(String[] args) {
+        Scanner value = new Scanner(System.in);
+
+        // Define the original array
+        System.out.print("Enter the size of the array : ");
+        int size = value.nextInt();
+        int [] array = new int[size];
+        System.out.print("Enter the values of array : ");
+    for (int i = 0; i < size; i++) {
+            array[i] = value.nextInt();
+    }
+        System.out.print("Original Array:");
+        for (int i = 0; i < size; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+        System.out.print("Enter the element to insert: ");
+        int elementToInsert = value.nextInt();
+    
+        System.out.print("Enter the position (0 to " + size + ") to insert the element: ");
+        int position = value.nextInt();
+
+        if (position < 0 || position > size) {
+            System.out.println("Invalid position. Element cannot be inserted.");
+        } else {
+            int[] newArray = new int[size + 1];
+
+            for (int i = 0; i < position; i++) {
+                newArray[i] = array[i];
+            }
+
+            newArray[position] = elementToInsert;
+
+            for (int i = position; i < size; i++) {
+                newArray[i + 1] = array[i];
+            }
+
+            System.out.println("Updated Array : ");
+            for (int i = 0; i < newArray.length; i++) {
+                System.out.print(newArray[i] + " ");
+            }
+
+        }
+            System.out.println("\nSize of updated array is : " +( size + 1));
+        value.close();
+    }
+}
