@@ -505,7 +505,7 @@ public static void main(String[] args) {
 }
 }*/
 //****************************************** insertion and deletion of an element in an array  ***************************************************
-import java.util.*;
+/*import java.util.*;
 
 public class first {
     public static void main(String[] args) {
@@ -554,4 +554,15 @@ public class first {
             System.out.println("\nSize of updated array is : " +( size + 1));
         value.close();
     }
+}
+*/
+import java.util.*;
+public class first {
+class Main{
+    int x ; 
+}
+public static void main(String[] args) {
+    Main obj = new Main();
+    System.out.println(obj);
+}
 }
